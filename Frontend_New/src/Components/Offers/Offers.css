@@ -1,0 +1,41 @@
+#main_button{
+    color: white;
+
+}
+
+
+.offers
+{
+    display: flex;
+    justify-content: space-around;
+    background:linear-gradient(180deg,rgb(235, 239, 236),rgb(214, 233, 239)) ;
+    padding-top: 3rem;
+       
+   
+}
+
+.offer-left h1{
+    font-weight: 600;
+    font-size: 56px;
+}
+
+
+.offer-left p{
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0.5rem 0;
+}
+
+
+.offer-left{
+    padding-top: 4.2rem;
+}
+
+
+.offer-right img{
+   
+   height: 90%;
+   width:400px;
+
+}
+

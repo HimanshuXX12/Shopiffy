@@ -1,0 +1,45 @@
+.popular
+{
+    background:linear-gradient(180deg,rgb(235, 239, 236),rgb(214, 233, 239)) ;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+   
+
+  
+   
+}
+
+
+.popular h1{
+    padding-top: 25px;
+    margin-bottom: 5px;
+    color: #171717;
+    font-weight: 600;
+    font-size: 56px;
+    
+}
+
+.popular hr{
+    width:100px;
+    height: 6px;
+   background-color: #171717;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    margin-top:10px;
+    
+  
+
+
+}
+
+.popular-item
+{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:3rem;
+
+
+}
+
+

@@ -29,6 +29,11 @@ function Footer() {
            
         </div>
 
+        <div className='footer_copyright'>
+            Copyright @ 2022 -All Right Reserved
+
+        </div>
+
       
     </div>
   )

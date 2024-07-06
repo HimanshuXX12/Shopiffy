@@ -55,7 +55,8 @@ function LoginSignUp() {
           {
             inputer('WELCOME');
           }
-          else{
+          else
+          {
             inputer('Login');
           }
     }

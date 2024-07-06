@@ -109,6 +109,7 @@ const CartontextProvider=(props)=>{
     else
     {
         alert("Login First");
+        window.location.replace("/login");
 
     }
 }

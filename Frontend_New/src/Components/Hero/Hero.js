@@ -23,7 +23,7 @@ function Hero() {
 
         </div>
         <div className='hero-right'>
-            <img src={hero_right}/>
+            <img src={hero_right} className='imager'/>
 
         </div>
       

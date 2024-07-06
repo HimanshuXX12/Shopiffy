@@ -1,12 +1,13 @@
 const express= require('express');
-const port=300
 const app= express();
+const env=require('dotenv').config();
 const cookieParser=require('cookie-parser');
 app.use(express.json());
 const path= require('path');
 const multer=require('multer');
 const cors= require('cors');
 app.use(cors());
+const port=process.env.PORT||300
 const body=require('body-parser');
 app.use(cookieParser());
 const Controllers= require('./Controllers/Controller');

@@ -4,7 +4,7 @@ import './CSS/LoginSigUp.css'
 import { CartContext } from '../Context/CartContext';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-import { CartContext } from '../Context/CartContext'
+
 function LoginSignUp() {
     const ContextValue= useContext(CartContext);
     const {url}= ContextValue;

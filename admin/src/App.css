@@ -1,0 +1,19 @@
+body{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: hsl(0deg 0% 95.43%);
+  text-decoration: none;
+}
+
+.slider{
+  display: flex;
+   
+  width:100%;
+}
+
+.item_2{
+  width:80%;
+
+}
+

@@ -12,17 +12,17 @@ function SignUp() {
           <h1>WELCOME</h1>
           <div>
             <label  for='name'>UserName</label><br/>
-            <input type='text' id='name' className='name'/>
+            <input type='text' id='name' className='name' name='user_name'/>
             <hr/>
           </div>
           <div>
             <label  for='email'>Email</label><br/>
-            <input type='email' id='email' className='email'/>
+            <input type='email' id='email' className='email' name='email'/>
             <hr/>
           </div>
           <div>
             <label for='password'>Password</label><br/>
-            <input type='password' className='password' id='password' />
+            <input type='password' className='password' id='password' name='password' />
             <hr/>
           </div>
           <div className='login-tail'>

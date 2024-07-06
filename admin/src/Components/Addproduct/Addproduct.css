@@ -1,0 +1,80 @@
+.addproduct{
+     background-color: white;
+     width:60%;
+     display: flex;
+    padding:0 1rem;
+     flex-direction: column;
+     margin-top:1.5rem;
+     margin-left: 1.5rem;
+     gap:1rem;
+     height: 89vh;
+}
+
+
+.smaller{
+    display: flex;
+    width:100%;
+    
+
+}
+
+.input{
+   
+   padding:1rem 0.5rem;
+   width:80%;
+   font-size: 1rem;
+}
+
+
+.addproduct-itemfield{
+    width:100%;
+
+    font-weight: 500;
+}
+
+.input_first{
+    width:90%; 
+    padding:1rem 0.5rem;  
+    font-size: 1rem;  
+}
+
+.fielding{
+     /* height:1.5rem; */
+     padding:1rem 0.5rem ;
+     width:42%;
+     font-size: 1rem;
+     cursor: pointer;
+    
+     
+}
+
+
+.filler img{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+
+   
+}
+
+
+.btn{
+    padding:1rem ;
+    width:16%;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 400;
+    background-color: #2d77dd;
+    font-size: 1rem;
+    color:white;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 5%;
+}
+
+
+#category-text{
+    margin-top: 1.4rem;
+}

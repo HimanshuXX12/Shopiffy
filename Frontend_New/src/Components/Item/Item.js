@@ -3,9 +3,10 @@ import './Item.css'
 import { Link } from 'react-router-dom'
 
 function Item(props) {
-  console.log('printing props',props);
+ 
+ 
   return (
-    <Link to={`/${props.item.id}`} className='link' onClick={window.scrollTo(0,0)}>
+    <Link to={`/${props.item._id}`} className='link' onClick={window.scrollTo(0,0)}>
       <div className='item'>
           <img src={props.item.image}/>
           <p>{props.item.name}</p>

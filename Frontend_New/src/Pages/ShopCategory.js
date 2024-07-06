@@ -1,6 +1,6 @@
-import React ,{useContext}from 'react'
+import React ,{useContext, useEffect,useState}from 'react'
 import Navbar from '../Components/Navbar/Navbar'
-import all_data from '../Components/Assets/all_product.js'
+import all_data_local from '../Components/Assets/all_product.js'
 import Item from '../Components/Item/Item.js'
 import './CSS/Shop_category.css'
 import men_banner from '../Components/Assets/banner_mens.png'
@@ -9,12 +9,30 @@ import kid_banner from '../Components/Assets/banner_kids.png'
 import drop_down from '../Components/Assets/dropdown_icon.png'
 import Footer from '../Components/Footer/Footer.js'
 import { ShopContext } from '../Context/CartContext.js'
+import axios from 'axios'
 
-function ShopCategory(props) {
-   const filter_data=all_data.filter((value)=>value.category===props.category);
+ function ShopCategory(props) {
+   
+   const [recived,inputer]= useState([]);
+   
+     
+  const fetcher=async ()=>{
+    const res=   await axios.get('http://localhost:300/listproduct');
+    inputer(res.data.items);
+    
+
+  }
+
+    useEffect(()=>{
+      fetcher();
+
+    },[]);
+    console.log("printing shop category",recived);
+   
+    const filter_data= recived.filter((value)=>value.category===props.category);
   
 
-  console.log("printing all data",all_data)
+ 
  
   return (
     

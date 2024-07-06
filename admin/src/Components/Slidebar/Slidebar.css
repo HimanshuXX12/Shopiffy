@@ -1,0 +1,29 @@
+.slidebar{
+    background-color: white;
+     width:15%;
+    
+}
+
+
+.inner_slider{
+    padding:1rem;
+    background-color: hsl(0deg 0% 95.43%);
+    border-radius: 0.5rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-around;
+    margin: 1.3rem 1rem;
+}
+
+
+.text{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    
+}
+
+.link{
+    text-decoration: none;
+}
+

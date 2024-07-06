@@ -1,6 +1,7 @@
-import {React,useContext} from 'react'
+import {React,useContext,useState,useEffect} from 'react'
 import Product from './Product'
 import './CSS/Cart.css';
+import axios from 'axios';
 import { CartContext } from '../Context/CartContext';
 import Shop from './Shop';
 import all_product from '../Components/Assets/all_product';
@@ -11,6 +12,15 @@ function Cart() {
    let  updatted_cart;
    let  ContextValue= useContext(CartContext);
    let total=ContextValue.total_quantity();
+   const [all_product,inputer]= useState([]);
+   const Fetcher= async ()=>{
+     const res=   await axios.get('http://localhost:300/listproduct');
+     inputer(res.data.items);
+   }
+ useEffect(()=>{
+     Fetcher();
+ 
+ },[]);
   return (
      <>
      <Navbar/>
@@ -28,19 +38,19 @@ function Cart() {
        <div className='cart-list'>
        {
         all_product.map((item)=>{
-           if(ContextValue.items[item.id]>0)
+           if(ContextValue.items[item._id]>0)
             {
               return (
                  <div>
                     <div className='cart-item'>
                   <img src={item.image} className='item-image'/>
-                  <Link to={`/${item.id}`}  className='link'>
+                  <Link to={`/${item._id}`}  className='link'>
                     <p className='item-naam'>{item.name} </p>
                   </Link>
-                  <p>{item.new_price}</p>
-                  <button className='cart-button' onClick={()=>ContextValue.add_to_cart(item.id)}>{ContextValue.items[item.id]}</button>
-                  <p>{item.new_price*ContextValue.items[item.id]}</p>
-                  <img className='remover' src={remove_icon} onClick={()=>ContextValue.remove_from_cart(item.id)}/>
+                  <p>${item.new_price}</p>
+                  <button className='cart-button' onClick={()=>ContextValue.add_to_cart(item._id)}>{ContextValue.items[item._id]}</button>
+                  <p>${item.new_price*ContextValue.items[item._id]}</p>
+                  <img className='remover' src={remove_icon} onClick={()=>ContextValue.remove_from_cart(item._id)}/>
                
                    
                 </div>

@@ -8,16 +8,17 @@ import women_banner from '../Components/Assets/banner_women.png'
 import kid_banner from '../Components/Assets/banner_kids.png'
 import drop_down from '../Components/Assets/dropdown_icon.png'
 import Footer from '../Components/Footer/Footer.js'
-import { ShopContext } from '../Context/CartContext.js'
+import { CartContext } from '../Context/CartContext.js'
 import axios from 'axios'
 
  function ShopCategory(props) {
    
    const [recived,inputer]= useState([]);
    
-     
+   const ContextValue= useContext(CartContext);
+   const {url}= ContextValue;
   const fetcher=async ()=>{
-    const res=   await axios.get('http://localhost:300/listproduct');
+    const res=   await axios.get(`${url}/listproduct`);
     inputer(res.data.items);
     
 

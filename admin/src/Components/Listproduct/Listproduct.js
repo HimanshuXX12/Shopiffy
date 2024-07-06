@@ -4,8 +4,9 @@ import cross from '../Assets/cross_icon.png'
 import axios from 'axios'
 function Listproduct() {
     const [recieved_items,inputer]= useState([]);
+    const url="https://shopiffy-backened-updated.onrender.com";
     const fetcher= async ()=>{
-         const res= await axios.get('http://localhost:300/listproduct');
+         const res= await axios.get(`${url}/listproduct`);
          inputer(res.data.items);
          console.log(res.data.items);
         
@@ -22,7 +23,7 @@ function Listproduct() {
        const user_info={
         id:id
       }
-      const res= await axios.post('http://localhost:300/deleteProduct',user_info);
+      const res= await axios.post(`${url}/deleteProduct`,user_info);
       fetcher();
   }
     

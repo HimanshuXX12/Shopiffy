@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import data_new_local from '../Assets/new_collections'
 import Item from '../Item/Item'
 import axios from 'axios';
+import { CartContext } from '../../Context/CartContext';
 
   function NewCollection() {
     const [recived,inputer]= useState([]);
-     
+    const contextValue= useContext(CartContext);
+     const {url}=contextValue;
     const fetcher=async ()=>{
-      const res=  await  axios.get('http://localhost:300/listproduct');
+      const res=  await  axios.get(`${url}/listproduct`);
       inputer(res.data.items);
       
 

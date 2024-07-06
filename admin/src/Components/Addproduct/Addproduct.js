@@ -6,6 +6,7 @@ import Slidebar from '../Slidebar/Slidebar'
 import upload from '../Assets/upload_area.svg'
 function Addproduct() {
     const [item,setter]=useState(false);
+    const url="https://shopiffy-backened-updated.onrender.com";
     const [product_deatils,inputer]=useState({
         name:"",
         image:"",
@@ -24,7 +25,7 @@ function Addproduct() {
 
     const addhandler=async ()=>{
        console.log(product_deatils);
-        const url="http://localhost:300/upload";
+        const url=`${url}/upload`;
         const formData= new FormData();
         formData.append('product',item);
         console.log(formData);
@@ -33,7 +34,7 @@ function Addproduct() {
         product_deatils.image=res.data.image_url;
         
 
-        const new_responce=await axios.post('http://localhost:300/new_collection',product_deatils);
+        const new_responce=await axios.post(`${url}/new_collection`,product_deatils);
          if(new_responce.data.sucess)
             {
                  alert('Product Added');

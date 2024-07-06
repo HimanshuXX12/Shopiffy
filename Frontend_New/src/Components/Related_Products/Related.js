@@ -1,14 +1,16 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useContext} from 'react'
 import './Related.css'
 import data from '../Assets/data.js'
 import Item from '../Item/Item.js'
 import axios from 'axios'
+import { CartContext } from '../../Context/CartContext.js'
 function Related() {
 
   const [recived,inputer]= useState([]);
-     
+  const contextValue= useContext(CartContext);
+  const {url}=contextValue; 
   const fetcher=async ()=>{
-    const res=   await axios.get('http://localhost:300/listproduct');
+    const res=   await axios.get(`${url}/listproduct`);
     inputer(res.data.items);
     
 

@@ -22,12 +22,13 @@ const upload= multer({storage:storage});
 
 async function Controllers(app)
 {
+    const url="https://shopiffy-backened-updated.onrender.com";
     app.use(cookieParser());
     
-    app.post('/upload',upload.single('product'),(req,res)=>{
+    app.post(`${url}/upload`,upload.single('product'),(req,res)=>{
         res.json({
           sucess:1,
-          image_url:`http://localhost:${port}/${req.file.filename}`
+          image_url:`/${req.file.filename}`
       })
   
   })

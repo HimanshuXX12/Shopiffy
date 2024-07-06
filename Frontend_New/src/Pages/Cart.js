@@ -13,8 +13,10 @@ function Cart() {
    let  ContextValue= useContext(CartContext);
    let total=ContextValue.total_quantity();
    const [all_product,inputer]= useState([]);
+    
+     const {url}= ContextValue;
    const Fetcher= async ()=>{
-     const res=   await axios.get('http://localhost:300/listproduct');
+     const res=   await axios.get(`${url}/listproduct`);
      inputer(res.data.items);
    }
  useEffect(()=>{

@@ -19,7 +19,7 @@ Controllers(app);
 const mongoose= require('mongoose');
  
 
-const db_link=process.env.URL;
+const db_link=process.env.PORT;
 
 
 

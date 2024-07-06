@@ -16,12 +16,14 @@ import Cart from './Cart';
 
 
 
+
 function Product() 
 {
   const [recived,inputer]= useState([]);
-     
+  const contextValue= useContext(CartContext);
+  const {items,setter,remove_from_cart,add_to_cart,url}= contextValue;   
   const fetcher=async  ()=>{
-    const res=   await axios.get('http://localhost:300/listproduct');
+    const res=   await axios.get(`${url}/listproduct`);
     inputer(res.data.items);
     
 
@@ -39,10 +41,7 @@ function Product()
 
      console.log('product',product);
   
-   const contextValue= useContext(CartContext);
-    
-    
-    const {items,setter,remove_from_cart,add_to_cart}= contextValue;
+   
   
       
   return (

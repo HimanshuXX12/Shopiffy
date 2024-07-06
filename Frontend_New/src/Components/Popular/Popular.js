@@ -1,14 +1,16 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,useContext } from 'react'
 import './Popular.css'
 import data_object from '../Assets/data'
 import Item from '../Item/Item'
 import axios from 'axios';
+import { CartContext } from '../../Context/CartContext';
   function Popular() {
     
   const [recived,inputer]= useState([]);
-     
+  const contextValue= useContext(CartContext);
+  const {url}=contextValue; 
   const fetcher=async ()=>{
-    const res=   await axios.get('http://localhost:300/listproduct');
+    const res=   await axios.get(`${url}/listproduct`);
     inputer(res.data.items);
     
 

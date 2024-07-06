@@ -7,8 +7,9 @@ import axios from 'axios'
 export const CartContext= createContext(null);
     
 
+
 const CartontextProvider=(props)=>{
-    
+    const url="https://shopiffy-backened-updated.onrender.com";
     const [items,setter]= useState({});
     const [recieved,inputer]= useState(sessionStorage.getItem("cart")?sessionStorage.getItem("cart"):[]);
 
@@ -17,7 +18,7 @@ const CartontextProvider=(props)=>{
   const finder= async ()=>{
       if(localStorage.getItem("token"))
         {
-            res= await  axios.post('http://localhost:300/get_cart',{
+            res= await  axios.post(`${url}/get_cart`,{
                 token:localStorage.getItem('token'),
             }); 
             console.log("get_cart respnce",res.data.user);
@@ -32,7 +33,7 @@ const CartontextProvider=(props)=>{
 
   useEffect(async ()=>{
     finder();   
-    const new_res= await axios.get("http://localhost:300/listproduct");
+    const new_res= await axios.get(`${url}/listproduct`);
     inputer(new_res.data.items);
     sessionStorage.setItem("cart",new_res.data.items);
   },[]);
@@ -44,7 +45,7 @@ const CartontextProvider=(props)=>{
         if(localStorage.getItem('token'))
             {
                 setter((curr)=>({...curr,[itemid]:curr[itemid]+1}));
-                await axios.post("http://localhost:300/add_cart",{
+                await axios.post(`${url}/add_cart`,{
                     object_id:itemid,
                     token:localStorage.getItem("token")
                 })
@@ -100,7 +101,7 @@ const CartontextProvider=(props)=>{
     setter((curr)=>({...curr,[itemid]:curr[itemid]-1}));
     if(localStorage.getItem("token"))
     {
-        await axios.post("http://localhost:300/remove_cart",{
+        await axios.post(`${url}/remove_cart`,{
             token:localStorage.getItem("token"),
             item_id:itemid
         })
@@ -112,7 +113,7 @@ const CartontextProvider=(props)=>{
     }
 }
 
-    const ContextValue={total_price,setter,items,remove_from_cart,total_quantity,add_to_cart};
+    const ContextValue={total_price,setter,items,remove_from_cart,total_quantity,add_to_cart,url};
     console.log('Printin in Context',items);
 
     return (

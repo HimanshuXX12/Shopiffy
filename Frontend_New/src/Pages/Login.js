@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import './CSS/LoginSigUp.css'
+import { CartContext } from '../Context/CartContext';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import { CartContext } from '../Context/CartContext'
 function LoginSignUp() {
     const ContextValue= useContext(CartContext);
+    const {url}= ContextValue;
     const [value,inputer]=useState('Login');
     const [formData, setfromData]= useState({
          user_name:"",
@@ -23,7 +25,7 @@ function LoginSignUp() {
      const printer=async ()=>{
           if(value==='Login')
             {
-                const res= await axios.post('http://localhost:300/login',formData);
+                const res= await axios.post(`${url}/login`,formData);
                 alert(res.data.error);
                 if(res.data.sucess)
                 {
@@ -34,7 +36,7 @@ function LoginSignUp() {
             }
             else
             {
-                const res= await axios.post('http://localhost:300/signup',formData);
+                const res= await axios.post(`${url}/signup`,formData);
 
                
                 if(res.data.sucess)

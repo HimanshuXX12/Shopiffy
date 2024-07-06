@@ -10,20 +10,21 @@ export const CartContext= createContext(null);
 const CartontextProvider=(props)=>{
     
     const [items,setter]= useState({});
-    const [recieved,inputer]= useState(localStorage.getItem("cart")?localStorage.getItem("cart"):[]);
+    const [recieved,inputer]= useState(sessionStorage.getItem("cart")?sessionStorage.getItem("cart"):[]);
 
   let res;
 
   const finder= async ()=>{
       if(localStorage.getItem("token"))
         {
-            res= await  axios.post('http://localhost:300/add_cart',{
+            res= await  axios.post('http://localhost:300/get_cart',{
                 token:localStorage.getItem('token'),
             }); 
-            console.log(res.data.user);
+            console.log("get_cart respnce",res.data.user);
              setter(res.data.user.cartdata);
         }
-        else{
+        else
+        {
              setter({});
         }
     
@@ -32,7 +33,8 @@ const CartontextProvider=(props)=>{
   useEffect(async ()=>{
     finder();   
     const new_res= await axios.get("http://localhost:300/listproduct");
-    localStorage.setItem("cart",new_res.data.items);
+    inputer(new_res.data.items);
+    sessionStorage.setItem("cart",new_res.data.items);
   },[]);
  
 
@@ -96,6 +98,18 @@ const CartontextProvider=(props)=>{
    const remove_from_cart= async (itemid)=>{
         
     setter((curr)=>({...curr,[itemid]:curr[itemid]-1}));
+    if(localStorage.getItem("token"))
+    {
+        await axios.post("http://localhost:300/remove_cart",{
+            token:localStorage.getItem("token"),
+            item_id:itemid
+        })
+    }
+    else
+    {
+        alert("Login First");
+
+    }
 }
 
     const ContextValue={total_price,setter,items,remove_from_cart,total_quantity,add_to_cart};

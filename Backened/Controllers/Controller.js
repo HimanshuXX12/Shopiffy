@@ -252,7 +252,7 @@ app.post('/login',async (req,res)=>{
         }
  }
 
-//  Add to cart
+//  Add to cart or Update to cart
 app.post('/add_cart',fetcher_user,async (req,res)=>{
     const {user,object_id}= req.body;
     
@@ -265,15 +265,24 @@ app.post('/add_cart',fetcher_user,async (req,res)=>{
          
 })
 
-// Cart generation
+// Get Cart
 
-// app.post('/update_cart',fetcher_user,async (req,res)=>{
+app.post("/get_cart",fetcher_user,async(req,res)=>{
+     const {user}=req.body;
+     const user_data= await User_model.findOne({email:user.email});
+     console.log("user_data",user_data);
+     res.json({user:user_data});
+})
 
-//        User_model({_id:},{cartcartdata:req.body.cart});
-// })
+//Remove from cart
 
+app.post("/remove_cart",fetcher_user,async (req,res)=>{
+      const {user}=req.body;
+      const data=await User_model.findOne({email:user.email});
+      data.cartdata[req.body.item_id]=data.cartdata[req.body.item_id]-1;
+      await User_model.findByIdAndUpdate({_id:data._id},{cartdata:data.cartdata});
 
-// 
+})
 
 
 }

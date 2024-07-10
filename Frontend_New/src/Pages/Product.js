@@ -109,8 +109,8 @@ function Product()
 
             </div>
             <Related/>
-            <Footer/>
             <Description/>
+            <Footer/>
             </div>
           ))
         }

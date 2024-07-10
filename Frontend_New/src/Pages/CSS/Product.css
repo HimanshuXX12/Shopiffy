@@ -1,7 +1,8 @@
 .product{
     background-color: white;
     display: flex;
-    height: 80vh;
+    height: 90vh;
+    flex: 1 1 auto;
     margin : 4rem auto;
     width:80%; 
     
@@ -9,9 +10,11 @@
 
 }
 
+
 .product-left{
     display: flex;
     gap:10px;
+    
 
 
 }
@@ -26,23 +29,28 @@
 
 .smaller-images img{
     height: 24%;
+    cursor:pointer;
+    border:1px solid green;
+
 }
 
 
 .bigger-image img {
     height: 100%;
+   
 }
 
 .product-right{
     padding:2rem;
-    gap:1.5rem;
+
+    gap:1.3rem;
     display: flex;
     flex-direction: column;
 }
 
 
 .product-right h1{
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .main-star-rating{

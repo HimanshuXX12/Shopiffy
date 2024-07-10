@@ -23,16 +23,31 @@ import axios from 'axios'
     
 
   }
+  const [value,setter]= useState(false);
+    let intital=null;
+ 
+ 
 
     useEffect(()=>{
       fetcher();
+     
 
     },[]);
     console.log("printing shop category",recived);
    
     const filter_data= recived.filter((value)=>value.category===props.category);
-  
-
+    const non_category= recived.filter((value)=>value.category!=props.category);
+   
+    const changer=async ()=>{
+        if(value===false)
+        {
+           setter(true);
+        }
+        else
+        {
+          setter(false);
+        }
+    }
  
  
   return (
@@ -64,9 +79,31 @@ import axios from 'axios'
               </div>
      </div>
       
-      <div className='btn'>
-
-      <button >Explore More </button>
+      <div className=''>
+      {
+        
+        value?
+         <div>
+            <div className='popular'>
+        <div  className='popular-item'>
+            {
+              non_category.map((item)=>(
+                <Item item={item}/>
+              ))
+            }
+            
+          </div>
+          </div>
+          <div className='btn'>
+             <button onClick={()=>changer()} >Show Less </button>
+         </div>
+         </div>
+           :
+         <div className='btn'>
+             <button onClick={()=>changer()} >Explore More </button>
+         </div>
+      }
+     
 
       </div>
       <Footer/>

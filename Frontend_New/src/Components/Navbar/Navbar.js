@@ -26,6 +26,7 @@ function Navbar() {
                 <li onClick={()=>setmenu('Mens')}><Link to="/men"className='link'>Men</Link>{menu=='Mens'?<hr/>:<></>}</li>
                 <li onClick={()=>setmenu('Women')}><Link to='/women'className='link'>Women</Link>{menu=='Women'?<hr/>:<></>}</li>
                 <li onClick={()=>setmenu('Kids')}><Link to='/kid'className='link'>Kids</Link>{menu=='Kids'?<hr/>:<></>}</li>
+                <li onClick={()=>setmenu('orders')}><Link to='/orders'className='link'>Orders</Link>{menu=='orders'?<hr/>:<></>}</li>
             </ul>
         </div>
         <div className='nav-icon'>

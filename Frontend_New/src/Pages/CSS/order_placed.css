@@ -1,0 +1,152 @@
+
+
+.order_placed{
+    background-color: white;
+    /* height:80%; */
+    margin: 0 auto;
+    width:80%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    
+}
+
+.order-place-page{
+    /* height:100vh; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+
+.left-container{
+   background-color: white;
+    width: 50%;
+    
+    
+}
+
+.right-container{
+  background-color: whitesmoke;
+  width: 50%;
+
+  
+  gap:1rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+
+.input{
+    background-color: white;
+    padding:0.5rem ;
+    border:1px solid grey;
+    border-radius: 5px;
+    width:88%;
+    outline:grey;
+}
+
+.inside-right-container{
+    margin:0 auto;
+    width: 60%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+}
+
+
+.texter{
+    font-size: 10px;
+}
+
+
+.samller{
+    display: flex;
+    gap:1.5rem;
+    
+}
+
+.inputer{
+    background-color: white;
+    padding:0.5rem ;
+    border:1px solid grey;
+    border-radius: 5px;
+    width:75%;
+    outline:grey;
+    
+}
+
+#labeler{
+    margin-left: 0.4rem;
+    font-size: 12px;
+    
+}
+
+
+.left-inner-container{
+    width:90%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    padding-bottom: 2rem;
+
+}
+
+
+#logger{
+    margin-top: 2rem;
+    
+  
+}
+
+
+#logger p{
+    font-size: 20px;
+}
+
+#logger img{
+    width:50%;
+    height: 50%;
+    margin: 0 auto;
+}
+
+
+
+
+.bottom{
+    margin: 0 auto;
+}
+
+
+.cart-place-item{
+    display: flex;
+    /* photo price cross */
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+
+.table{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-left: 1.7rem;
+}
+
+
+
+.horizontal{
+    width: 90%;
+}
+
+
+.lower-left-inner{
+    margin-top: 1rem;
+}

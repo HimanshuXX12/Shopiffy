@@ -31,6 +31,7 @@ function Product()
 
     useEffect(()=>{
       fetcher();
+      
 
     },[]);
  
@@ -45,11 +46,11 @@ function Product()
   
       
   return (
-    <div>
+    <div className='prodcut_page'>
        {
-          product.map((value)=>(
-            <div>
-                    <Navbar/>
+         product.map((value)=>(
+           <div>
+              <Navbar/>
             <div className='product'>
               <div className='product-left'>
                 <div className='smaller-images'>
@@ -107,12 +108,12 @@ function Product()
               </div>
 
             </div>
-            <Description/>
             <Related/>
             <Footer/>
+            <Description/>
             </div>
           ))
-       }
+        }
 
      
       

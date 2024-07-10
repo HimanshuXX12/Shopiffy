@@ -11,7 +11,7 @@ export const CartContext= createContext(null);
 const CartontextProvider=(props)=>{
     const url="https://shopiffy-backened-updated.onrender.com";
     const [items,setter]= useState({});
-    const [recieved,inputer]= useState(sessionStorage.getItem("cart")?sessionStorage.getItem("cart"):[]);
+    const [recieved,inputer]= useState([]);
 
   let res;
 
@@ -30,6 +30,7 @@ const CartontextProvider=(props)=>{
         }
     
   }
+
 
   useEffect(async ()=>{
     finder();   
@@ -114,7 +115,7 @@ const CartontextProvider=(props)=>{
     }
 }
 
-    const ContextValue={total_price,setter,items,remove_from_cart,total_quantity,add_to_cart,url};
+    const ContextValue={total_price,setter,items,remove_from_cart,total_quantity,add_to_cart,url,recieved};
     console.log('Printin in Context',items);
 
     return (

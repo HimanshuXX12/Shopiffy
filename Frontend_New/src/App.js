@@ -13,6 +13,9 @@ import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
 
 import SignUp from './Pages/SignUp';
+import Orders from './Pages/Orders';
+import Place_order from './Pages/Place_order';
+import Single_Order from './Pages/Single_Order';
 function App() {
     
     
@@ -30,7 +33,10 @@ function App() {
             <Route path='/:product_id' element={<Product/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/login' element={<Login/>}/>
-            <Route path='/signup' element={<SignUp/>}/>
+             <Route path='/orders' element={<Orders/>}/>
+             <Route path='/order/:order_id' element={<Single_Order/>}/>
+             <Route path='/place_order' element={<Place_order/>}/>
+
             {/* <Route path='/cart' element={<Cart/>}/> */}
         </Routes>
       

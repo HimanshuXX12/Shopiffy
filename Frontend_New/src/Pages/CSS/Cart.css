@@ -3,10 +3,17 @@
     margin: 0 auto;
     padding-top: 1rem;
     background-color: white;
-    height: 100%;
+    /* height: 100%; */
+    flex: 1 1 auto;
     width:90%;
     padding-left:1rem;
     
+}
+
+.cart_page{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .cart-header{

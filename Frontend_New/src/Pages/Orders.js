@@ -17,6 +17,14 @@ function Orders() {
     let  ContextValue= useContext(CartContext);
     const {url}= ContextValue;
    
+      useEffect(()=>{
+          if(!localStorage.getItem("token"))
+          {
+            alert('Login First');
+            window.location.replace("/login");
+            
+          }
+      },[])
     const remover= async (orderId)=>{
        const res= await axios.post(`${url}/delete-order`,{
           orderId:orderId

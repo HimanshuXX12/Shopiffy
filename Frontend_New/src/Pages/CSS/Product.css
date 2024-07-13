@@ -27,7 +27,8 @@
     
 }
 
-.smaller-images img{
+.smaller-images img
+{
     height: 24%;
     cursor:pointer;
     border:1px solid green;

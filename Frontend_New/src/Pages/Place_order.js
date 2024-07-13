@@ -38,6 +38,35 @@ function Place_order() {
             alert("Cart Empty");
             window.location.replace('/');
          }
+
+         const element= document.getElementsByClassName("input");
+         for(let i=0;i<element.length;i++)
+         {
+            element[i].addEventListener("blur",async function(){
+                if(element[i].value)
+                {
+                    element[i].classList.add("filled");
+                }
+                else {
+                   element[i].classList.remove("filled");
+                }
+            })
+         }
+
+         const elementer= document.getElementsByClassName("inputer");
+
+         for(let i=0;i<elementer.length;i++)
+         {
+             elementer[i].addEventListener("blur",async function(){
+                 if(elementer[i].value)
+                 {
+                    elementer[i].classList.add("filled");
+                 }
+                 else{
+                    elementer[i].classList.remove("filled");
+                 }
+             })
+         }
          
     })
 

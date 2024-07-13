@@ -30,7 +30,7 @@
 }
 
 .right-container{
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   width: 50%;
 
   
@@ -42,12 +42,19 @@
 
 .input{
     background-color: white;
-    padding:0.5rem ;
-    border:1px solid grey;
-    border-radius: 5px;
+    padding:0.7rem ;
+    border:1px solid #E2E8F0;    /* border-radius: 5px; */
+    outline: none;
+    transition:  all 0.2s ease;
     width:88%;
-    outline:grey;
+   
 }
+
+.input:focus{
+    border-color: rgb(17, 17, 202);
+    border-width: 2px;
+}
+
 
 .inside-right-container{
     margin:0 auto;
@@ -55,7 +62,7 @@
     display: flex;
     gap: 1rem;
     flex-direction: column;
-
+    
 }
 
 
@@ -72,12 +79,21 @@
 
 .inputer{
     background-color: white;
-    padding:0.5rem ;
-    border:1px solid grey;
-    border-radius: 5px;
+    padding:0.7rem ;
+    border:1px solid #E2E8F0 ;
+    /* border-radius: 5px; */
     width:75%;
-    outline:grey;
+    transition: all 0.3s ease;
     
+    
+}
+.filled{
+    background-color: #dfe6f3;
+}
+
+.inputer :focus{
+    border: 2px rgb(17, 17, 202);
+
 }
 
 #labeler{

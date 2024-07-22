@@ -48,28 +48,30 @@ function Orders() {
         token:localStorage.getItem("token")
      })
 
+   
+
      setter(res.data.orders);
   
   }
 
-  const dater=  (timestamp)=>{
+//   const dater=  (timestamp)=>{
     
-     const date= new Date(timestamp);
-     return date.getDate();
+//      const date= new Date(timestamp);
+//      return date.getDate();
       
-  }
+//   }
 
-  const monther=  (timestamp)=>{
-    const date= new Date(timestamp);
-    return date.getMonth();
+//   const monther=  (timestamp)=>{
+//     const date= new Date(timestamp);
+//     return date.getMonth();
      
- }
+//  }
 
- const yearer=  (timestamp)=>{
-  const date=new  Date(timestamp);
-  return date.getFullYear();
+//  const yearer=  (timestamp)=>{
+//   const date=new  Date(timestamp);
+//   return date.getFullYear();
    
-}
+// }
 
  const printer= (timestamp)=>{
    const date= new Date(timestamp);

@@ -335,23 +335,24 @@ async function Controllers(app) {
         res.json({ sucess: true });
 
     })
-
+  
 
 
     app.post("/order_list", fetcher_user, async (req, res) => {
         console.log(req.body);
         const { user } = req.body;
-        const order_data = await order_model.find({ email: user.user_email }, null, { sort: { 'createdAt': -1 } });
-
+        console.log(user.email);
+        const order_data = await order_model.find({user_email: user.email }, null, { sort: { 'createdAt': -1 } });
+        console.log("order respective of user login",order_data)
         res.json({ orders: order_data });
-    })
+    })  
 
 
     app.post("/delete-order", async (req, res) => {
 
         await order_model.findByIdAndDelete({ _id: req.body.orderId });
         res.json({ sucess: true });
-    })
+    })  
 
 
     //order_details

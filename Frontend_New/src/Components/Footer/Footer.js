@@ -11,7 +11,7 @@ function Footer() {
 
         <div className='footer_header'>
             <img src={main_icon}/>
-            <h1>SHOPPIFY</h1>
+            <h1>SHOPIFFY</h1>
         </div>
        
             <ul className='footer_main'>

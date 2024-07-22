@@ -28,6 +28,23 @@ function Single_Order() {
       
 
    }
+
+   const dater=  (timestamp)=>{
+    
+         const date= new Date(timestamp);
+         
+         return date.getDate();
+          
+      }
+  
+    
+   const printer= (timestamp)=>{
+    const date= new Date(timestamp);
+     date= new Date(date.getTime()+2*24*60*60*1000);
+    const option={year:'numeric',month:'long',day:'numeric'};
+    const formatedDate=new Intl.DateTimeFormat('en-US',option).format(date);
+    return formatedDate;
+  }
    
    const reacter= ()=>{
       if(feild===false)
@@ -95,9 +112,15 @@ function Single_Order() {
                   <p>${order_detail.Price}</p>
               </div>
               {
-                feild?<div className='stater-box'>
+                feild?<div>
+                  <div className='stater-box'>
                    <p>Status</p>
                    <p>{order_detail.status}</p>
+                </div>
+                <div className='stater-box'>
+                   <p>Estimated Time</p>
+                   <p>Two Days</p>
+                </div>
                 </div>
                 :  <div> <button onClick={reacter} className='add_to_cart' id="adder">Check Status</button></div>
               }

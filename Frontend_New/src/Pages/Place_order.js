@@ -71,35 +71,53 @@ function Place_order() {
     })
 
    
-
+    const [checkboxValue,SetcheckboxValue]=useState(false);
     const [counter,changer]= useState(false);
+    const checkboxChecker= async ()=>{
+          if(checkboxValue===false)
+          {
+              SetcheckboxValue(true);
+          }
+          else
+          {
+             SetcheckboxValue(false);
+          }
+    }
 
     const clicker= async ()=>{
-         const res= await axios.post(`${url}/orders`,{
-            Address:value.Address,
-            Mobile:value.Mobile,
-            Price:ContextValue.total_price(),
-            Quantity:ContextValue.total_quantity(),
-            status:value.status,
-            items:items,
-            Mode:value.Mode,
-            token:localStorage.getItem("token"),
-            full_name:value.full_name,
-            Pincode:value.Pincode,
-            Country:value.Country
-          })
-
-          console.log(res);
-
-          alert(res.data.error);
-          if(res.data.sucess)
+        console.log(checkboxValue);
+          if(checkboxValue===true)
           {
-              const res=await axios.post( `${url}/delete_cart`,{
-                token:localStorage.getItem("token")
-            })
-            console.log("items ",items);
-            window.location.replace("/orders");
-           
+            const res= await axios.post(`${url}/orders`,{
+                Address:value.Address,
+                Mobile:value.Mobile,
+                Price:ContextValue.total_price(),
+                Quantity:ContextValue.total_quantity(),
+                status:value.status,
+                items:items,
+                Mode:value.Mode,
+                token:localStorage.getItem("token"),
+                full_name:value.full_name,
+                Pincode:value.Pincode,
+                Country:value.Country
+              })
+    
+              console.log(res);
+    
+              alert(res.data.error);
+              if(res.data.sucess)
+              {
+                  const res=await axios.post( `${url}/delete_cart`,{
+                    token:localStorage.getItem("token")
+                })
+                console.log("items ",items);
+                window.location.replace("/orders");
+               
+              }
+          }
+          else
+          {
+              alert("Tick the Checkbox for proceed");
           }
 
           
@@ -169,7 +187,7 @@ function Place_order() {
                 <input className='input' id='Mobile' name='Mobile' onChange={changeHandler}/>
               </div>
               <div>
-                <input type='checkbox' name='checkbox' id='checkbox' className='checkbox'/>
+                <input type='checkbox' name='checkbox' id='checkbox' onClick={checkboxChecker} className='checkbox'/>
                 <label for="chackbox" className='texter' id='labeler'><strong>By Placing the Secure Order I  agree to the terms and Condition</strong></label>
               </div>
 

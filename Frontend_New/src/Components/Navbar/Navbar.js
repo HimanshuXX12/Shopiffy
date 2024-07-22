@@ -30,8 +30,8 @@ function Navbar() {
             </ul>
         </div>
         <div className='nav-icon'>
-           {localStorage.getItem('token')?<button onClick={logout}>Logout</button>:
-           <Link className='link' to='/login'><button>Login</button></Link>}
+           {localStorage.getItem('token')?<button onClick={logout}>LOG OUT</button>:
+           <Link className='link' to='/login'><button>LOGIN</button></Link>}
            <Link to='/cart' className='link'>
             <img src={cart_image} className='cart_image'/>
            </Link>

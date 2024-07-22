@@ -7,7 +7,7 @@ const path= require('path');
 const multer=require('multer');
 const cors= require('cors');
 app.use(cors());
-const port=process.env.PORT||300
+const port=300;
 const body=require('body-parser');
 app.use(cookieParser());
 const Controllers= require('./Controllers/Controller');
@@ -19,10 +19,10 @@ Controllers(app);
 const mongoose= require('mongoose');
  
 
-const db_link=process.env.URL;
+const db_link="mongodb+srv://himanshuee2001admern-ecommerse:L7Xd70J9vzpY3HVj@cluster0.jhrbkzx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 
-
+    
 
 mongoose.connect(db_link).then(()=>{
      console.log('Database is connected');

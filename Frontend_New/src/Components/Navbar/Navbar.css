@@ -69,17 +69,17 @@
 
 
 .nav-icon button{
-    width:120px;
-   padding:12px 2px;
+    /* width:120px; */
+     padding:1rem 1.4rem;
    
     outline: none;
-    border: 1px solid #7a7a7a;
-    border-radius: 75px;
-    font-size: 15px;
-    font-weight: 500;
-    background: white;
+    border: 2px solid black;
+    /* border-radius: 75px; */
+    font-size: 12px;
+    font-weight: 700;
+    background: #fff;
     cursor: pointer;
-    color: #515151;
+    color: black;
 
 }
 

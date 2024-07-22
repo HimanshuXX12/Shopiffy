@@ -1,7 +1,9 @@
 
 .footer{
-    margin-top: 2rem;
-   
+    /* margin-top: 2rem; */
+    margin: 0 auto;
+    width:80%;
+     margin-top: 2rem;
     display: flex;
     padding: 4rem 0;
     flex-direction: column;
@@ -35,7 +37,7 @@
 .footer_main li{
     text-decoration: none;
     list-style: none;
-    color: ;
+    cursor: pointer;
 
 }
 
@@ -44,6 +46,10 @@
     gap:2rem;
     align-items: center;
     margin :2rem 0;
+}
+
+.footer_icons img{
+    cursor: pointer;
 }
 
 

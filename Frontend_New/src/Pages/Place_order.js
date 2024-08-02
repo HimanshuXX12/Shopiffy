@@ -68,7 +68,7 @@ function Place_order() {
              })
          }
          
-    })
+    },[]);
 
    
     const [checkboxValue,SetcheckboxValue]=useState(false);

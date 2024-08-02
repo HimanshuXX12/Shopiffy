@@ -24,10 +24,11 @@ function Orders() {
             window.location.replace("/login");
             
           }
-          else{
+          else
+          {
             Fetcher();
           }
-      },[])
+      },[]);
     const remover= async (orderId)=>{
        const res= await axios.post(`${url}/delete-order`,{
           orderId:orderId

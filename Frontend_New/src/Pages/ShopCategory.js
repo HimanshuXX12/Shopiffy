@@ -30,8 +30,6 @@ import axios from 'axios'
 
     useEffect(()=>{
       fetcher();
-     
-
     },[]);
     console.log("printing shop category",recived);
    

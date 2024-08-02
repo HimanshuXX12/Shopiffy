@@ -21,7 +21,6 @@ const mongoose= require('mongoose');
 
 const db_link=process.env.URL;
 
-
     
 
 mongoose.connect(db_link).then(()=>{

@@ -101,16 +101,20 @@ function Single_Order() {
         </div>
         <div className='inner-right-section'>
            <div className='logo'><img src={logo}/></div>
+          
            <hr className='liner'/>
+          
            <div className='right-inner-main'>
               <div className='small-items'>
                  <p>Total items</p>
                  <p>{order_detail.Quantity}</p>
               </div>
+
               <div className='small-items'>
                   <p>Total Price</p>
                   <p>${order_detail.Price}</p>
               </div>
+            
               {
                 feild?<div>
                   <div className='stater-box'>
@@ -122,7 +126,9 @@ function Single_Order() {
                    <p>Two Days</p>
                 </div>
                 </div>
-                :  <div> <button onClick={reacter} className='add_to_cart' id="adder">Check Status</button></div>
+                :  <div className='btn-box'> 
+         
+                <button onClick={reacter} className='add_to_cart' id="adder">Check Status</button></div>
               }
            </div>
         </div>

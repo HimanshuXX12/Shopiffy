@@ -66,7 +66,7 @@ function Cart() {
 
 
         </div>
-
+        <div className='flex-grow'></div>
         <div className='cart-tail'>
             <div className='cart-tail-left'>
                 <h1>Cart Totals</h1>
@@ -103,7 +103,7 @@ function Cart() {
             </div>
           
         </div>
-
+      
         
       </div>
 

@@ -5,10 +5,16 @@
     background-color: white;
     /* height: 100%; */
     flex-grow: 1;
-    flex: 1 1 auto;
+    /* flex: 1 1  auto; */
     width:90%;
     padding-left:1rem;
+    display: flex;
+    flex-direction: column;
     
+}
+
+.flex-grow{
+    flex-grow:1 ;
 }
 
 .cart_page{
@@ -40,7 +46,7 @@ hr
 .cart-list{
     display: flex;
     flex-direction: column;
-    margin:0 auto; 
+    /* margin:0 auto;  */
     gap:1rem;
 
 }
@@ -48,8 +54,7 @@ hr
 
 .cart-item{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
-    
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr; 
     align-items: center;
     padding:0 1rem;
     

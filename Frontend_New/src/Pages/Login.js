@@ -43,6 +43,7 @@ function LoginSignUp() {
                   {
                     alert(res.data.error);
                      inputer('Login');
+                     window.location.replace("/login");
                   }
             }
      }

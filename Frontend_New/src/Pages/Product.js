@@ -65,6 +65,7 @@ function Product()
               </div>
               <div className='product-right'>
                 <h1>{value.name}</h1>
+                <div className='flex-grow'></div>
                 <div className='main-star-rating'>
                   <div>
                       <img src={star}/>
@@ -77,14 +78,16 @@ function Product()
                     (122)
                   </div>
                 </div>
+                <div className='flex-grow'></div>
                 <div className='pricing'>
                   <div className='item-prices-old'>${value.old_price}</div>
                   <div className='item-prices-new'>${value.new_price}</div>
                 </div>
+                <div className='flex-grow'></div>
                 <div className='description'>
                   <p>A Light Weight usually knitted pullover shirt close-fitting with a round neckline and shortsleeve </p>
                 </div>
-
+                <div className='flex-grow'></div>
                 <div>
                   <div><strong> Select Sizes</strong></div>
                   <div className='sizes-collection'>
@@ -94,11 +97,13 @@ function Product()
                     <div>2XL</div>
                   </div>
                 </div>
-                
+                <div className='flex-grow'></div>
                 <Link to='/cart'><button  onClick={()=>{add_to_cart(value._id)}} className='add_to_cart' id='adder'  >ADD TO CART</button></Link>
+                <div className='flex-grow'></div>
                 <div>
                   <strong>Category : </strong>Women ,T-Shirt,Crop-Top
                 </div>
+                <div className='flex-grow'></div>
                 <div>
                   <strong>Tags : </strong> Modern Latest
                 </div>

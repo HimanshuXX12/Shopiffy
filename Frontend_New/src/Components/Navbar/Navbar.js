@@ -12,7 +12,7 @@ function Navbar() {
 
     const logout= async ()=>{
          localStorage.removeItem('token');
-         window.location.replace('/');
+         window.location.replace('/login');
     }
   return (
     <div className='navbar'>

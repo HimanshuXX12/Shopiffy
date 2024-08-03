@@ -45,6 +45,9 @@ function LoginSignUp() {
                      inputer('Login');
                      window.location.replace("/login");
                   }
+                  else{
+                     alert(res.data.error);
+                  }
             }
      }
 

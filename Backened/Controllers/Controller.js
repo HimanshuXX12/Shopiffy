@@ -130,7 +130,7 @@ async function Controllers(app) {
     app.post('/signup', async (req, res) => {
         const { email, user_name, password } = req.body;
 
-        if (!email || !password || !user_name === "") {
+        if (!email || !password || user_name === "") {
             res.json({ sucess: false, error: 'All Fields are required' });
         }
 

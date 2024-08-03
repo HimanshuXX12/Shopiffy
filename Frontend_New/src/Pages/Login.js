@@ -37,13 +37,13 @@ function LoginSignUp() {
             else
             {
                 const res= await axios.post(`${url}/signup`,formData);
-
+                 console.log("responce",res.data);
                
                 if(res.data.sucess)
                   {
                     alert(res.data.error);
                      inputer('Login');
-                     window.location.replace("/login");
+                     
                   }
                   else{
                      alert(res.data.error);

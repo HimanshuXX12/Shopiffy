@@ -20,8 +20,11 @@ const mongoose= require('mongoose');
  
 
 const db_link=process.env.URL;
-
-    
+app.use((req,res,next)=>{
+     res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+})
 
 mongoose.connect(db_link).then(()=>{
      console.log('Database is connected');

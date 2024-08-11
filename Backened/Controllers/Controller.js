@@ -21,7 +21,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 async function Controllers(app) {
-    const url = "https://shopiffy-backened-updated.onrender.com"
+
+    // const url = "https://shopiffy-backened-updated.onrender.com"
     app.use(cookieParser());
 
     app.post('/upload', upload.single('product'), (req, res) => {

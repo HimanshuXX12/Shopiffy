@@ -1,5 +1,12 @@
 const express= require('express');
 const app= express();
+app.use((req,res,next)=>{
+     res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+     next();
+})
+
 const env=require('dotenv').config();
 const cookieParser=require('cookie-parser');
 app.use(express.json());
@@ -21,12 +28,6 @@ const mongoose= require('mongoose');
 
 // const db_link=process.env.URL;
 const db_link="mongodb+srv://himanshuee2001admern-ecommerse:L7Xd70J9vzpY3HVj@cluster0.jhrbkzx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-app.use((req,res,next)=>{
-     res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
-     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-     next();
-})
 
 const Controllers= require('./Controllers/Controller');
 Controllers(app);

@@ -3,6 +3,7 @@ const app= express();
 const cors= require('cors');
 app.use(cors());
 app.use((req,res,next)=>{
+     console.log("midlle ware is running");
      res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
      res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');

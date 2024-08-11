@@ -11,6 +11,7 @@ function Place_order() {
    
 
     let  ContextValue= useContext(CartContext);
+    const [ischecked,setischecked]= useState(false);
     const {items,url,recieved}=ContextValue;
     console.log("recieved in order_place",recieved);
     const [value,setter]=useState({
@@ -30,7 +31,10 @@ function Place_order() {
         setter({...value,[e.target.name]:e.target.value});
 
     }
-
+    
+    const checkhandller= async (e)=>{
+          setischecked(e.target.checked);
+    }
 
     useEffect(()=>{
          if(ContextValue.total_quantity()===0)
@@ -85,6 +89,12 @@ function Place_order() {
     }
 
     const clicker= async ()=>{
+
+          if(!ischecked)
+          {
+            alert("Checkbox to bec ticked");
+            return ;
+          }
         console.log(checkboxValue);
           if(checkboxValue===true)
           {
@@ -179,7 +189,7 @@ function Place_order() {
                  </div>
                  <div>
                     <div><label for="Country" className='texter'><strong>Country</strong></label></div>
-                    <input className='inputer'  name='Country' id='Country'  onChange={changeHandler}/>
+                    <input className='inputer' type="text"  name='Country' id='Country'  onChange={changeHandler}/>
                  </div>
               </div>
               <div>
@@ -187,7 +197,7 @@ function Place_order() {
                 <input className='input' type='number' id='Mobile' name='Mobile' onChange={changeHandler}/>
               </div>
               <div>
-                <input type='checkbox' name='checkbox' id='checkbox' onClick={checkboxChecker} className='checkbox'/>
+                <input type='checkbox' name='checkbox' id='checkbox' checked={ischecked} onChange={checkhandller} onClick={checkboxChecker} className='checkbox'/>
                 <label for="chackbox" className='texter' id='labeler'><strong>By Placing the Secure Order I  agree to the terms and Condition</strong></label>
               </div>
 

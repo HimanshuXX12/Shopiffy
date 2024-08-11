@@ -27,13 +27,13 @@ function App() {
       <BrowserRouter>
          
         <Routes>
-            <Route path='/' element={localStorage.getItem("token")?<Shop/>:<LoginSignUp/>}/>
+            <Route path='/' element={<Shop/>}/>
             <Route path='/men' element={<ShopCategory banner={men_banner} category='men'/>}/>
             <Route path='/women' element={<ShopCategory banner={women_banner} category='women'/>}/>
             <Route path='/kid' element={<ShopCategory banner={kid_banner} category='kid'/>}/>
             <Route path='/:product_id' element={<Product/>}/>
             <Route path='/cart' element={<Cart/>}/>
-            <Route path='/login' element={localStorage.getItem("token")?<Shop/>:<Login/>}/>
+            <Route path='/login' element={<Login/>}/>
              <Route path='/orders' element={<Orders/>}/>
              <Route path='/order/:order_id' element={<Single_Order/>}/>
              <Route path='/place_order' element={<Place_order/>}/>

@@ -184,7 +184,7 @@ function Place_order() {
               </div>
               <div>
                 <div><label for="Mobile" className='texter'><strong>Mobile</strong></label></div>
-                <input className='input' id='Mobile' name='Mobile' onChange={changeHandler}/>
+                <input className='input' type='number' id='Mobile' name='Mobile' onChange={changeHandler}/>
               </div>
               <div>
                 <input type='checkbox' name='checkbox' id='checkbox' onClick={checkboxChecker} className='checkbox'/>

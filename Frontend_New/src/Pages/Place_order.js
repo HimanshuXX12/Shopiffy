@@ -175,7 +175,7 @@ function Place_order() {
               <div className='samller'>
                  <div>
                     <div><label for="Pincode" className='texter'><strong>Pincode</strong></label></div>
-                    <input className="inputer" type='Number' id='Pincode' name='Pincode' placeholder='' onChange={changeHandler}/>
+                    <input className="inputer" type='number' id='Pincode' name='Pincode' placeholder='' onChange={changeHandler}/>
                  </div>
                  <div>
                     <div><label for="Country" className='texter'><strong>Country</strong></label></div>

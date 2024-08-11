@@ -26,8 +26,8 @@ app.use(express.urlencoded({extended:true}));
 const mongoose= require('mongoose');
  
 
-// const db_link=process.env.URL;
-const db_link="mongodb+srv://himanshuee2001admern-ecommerse:L7Xd70J9vzpY3HVj@cluster0.jhrbkzx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const db_link=process.env.URL;
+// const db_link="mongodb+srv://himanshuee2001admern-ecommerse:L7Xd70J9vzpY3HVj@cluster0.jhrbkzx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 const Controllers= require('./Controllers/Controller');
 Controllers(app);

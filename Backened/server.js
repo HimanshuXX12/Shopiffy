@@ -15,7 +15,7 @@ app.use(express.json());
 const path= require('path');
 const multer=require('multer');
 
-const port=300;
+const port=300||process.env.PORT;
 const body=require('body-parser');
 app.use(cookieParser());
 

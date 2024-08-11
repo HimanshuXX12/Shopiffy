@@ -1,5 +1,7 @@
 const express= require('express');
 const app= express();
+const cors= require('cors');
+app.use(cors());
 app.use((req,res,next)=>{
      res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
      res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
@@ -12,8 +14,7 @@ const cookieParser=require('cookie-parser');
 app.use(express.json());
 const path= require('path');
 const multer=require('multer');
-const cors= require('cors');
-app.use(cors());
+
 const port=300;
 const body=require('body-parser');
 app.use(cookieParser());
